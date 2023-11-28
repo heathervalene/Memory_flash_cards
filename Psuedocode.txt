@@ -1,0 +1,71 @@
+HTML Structure:
+1st HTML page will be a general welcome page with the following information:
+    - Header of Game Title in a text box with large letters
+    - Instructions on how to play in a text box
+    - A stylized button element linked to second HTML page to play the game
+    - 2-4 images of the cards for the game
+    Stretch goals for HTML page:
+    - animated background
+    - audio playing
+    
+
+2nd HTML page will contain the board game with 12 cards
+    - cards will be wrapped in a section with an Id of 'game board'
+    - each card will be in it's own <div> with the same class of 'memory card'
+    - each card will have 2 <img src> for the front and back of the card with classes of 'front face' and 'back face' representing the 2 different sides of the card
+    - Title of Game in text box 
+    - Winner text (maybe an alert box?) otherwise displayed text with id 'winner'
+    - stylized button to 'Play Again' in a separate section with id 'PA_Button'
+    - stylized button to return to main welcome page
+    Stretch Goals for HTML page:
+    - timer text with count up in section with id 'timer'
+    -score board with id 'score'
+
+CSS Structure:
+    - styling applied to cards, making them uniform in size and shape (square), with borders
+    - cards to be displayed in a grid and be centered vert/horz on the web page
+    - buttons to have similar styling 
+
+JS Logic:
+- contant variables
+    - array of cards holding value to be used for flashcards
+
+- State variables
+    - board game starting 
+    - shuffle cards 
+    - matched pair
+    - timer count (Stretch goal)
+
+- Cached elements
+    - 'memory card' 
+    - 'winner'
+    - 'timer' (strech goal)
+
+-Event listeners
+    - handle play again button to restart game
+    - clicks on each individual card
+
+-Functions
+    -  initilize game state:
+        - all cards facing back   
+        - timer starts
+
+    - Shuffle cards:
+        - loop through the card array to select and swap index (fisher yates algorithm)
+
+    - click handle:
+        - when card is clicked selected card's index is obtained, if not already selected or matched, value is revealed 
+
+    - Check match:
+        - When 2 cards are selected ; the values are compared.
+        - if values match, the pairs remain front facing
+        - else the cards are flipped back facing 
+
+    - Win:
+        - once all pairs are matched, game is stopped
+        - winner message is displayed 
+        - timer is stopped (strech goal)
+
+
+
+
