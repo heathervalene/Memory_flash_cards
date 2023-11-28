@@ -43,6 +43,7 @@ JS Logic:
 
 -Event listeners
     - handle play again button to restart game
+    - handle back button to take user back to Welcome page
     - clicks on each individual card
 
 -Functions
