@@ -28,44 +28,55 @@ CSS Structure:
 
 JS Logic:
 - contant variables
-    - array of cards holding value to be used for flashcards
+    - array of cards holding value to be used for flashcards and front card image
 
 - State variables
     - board game starting 
     - shuffle cards 
     - matched pair
-    - timer count (Stretch goal)
+   
 
 - Cached elements
-    - 'memory card' 
-    - 'winner'
-    - 'timer' (strech goal)
+    - class 'gameboard' to represent the game board section
+    - class 'memory_card' to represent each individual card
+    - id 'winner' to display winner message
+    - id 'play' button it iniate start of game
+    - id 'backhome' button to go back to Welcome HTML page
+    - id 'PA_button' button to reshuffle the cards and play again
+    
 
 -Event listeners
-    - handle play again button to restart game
-    - handle back button to take user back to Welcome page
-    - clicks on each individual card
+    - handle click from Welcome HTML page button with id "play" to game HTML page which should initilize the game
+    - handle click on each individual card with class "memory card"
+    - handle play again button with id "PA_button" to restart game
+    - handle back button with id "backhome" to take user back to Welcome HTML page
+   
 
 -Functions
-    -  initilize game state:
-        - all cards facing back   
-        - timer starts
+    - Player clicks on 'Play' button with id of "play" from Welcome HTML page to game HTML page
+    -  initilize game state when player moves to game HTML page:
+        - all cards facing back image 
+        - cards are shuffled
+       
 
-    - Shuffle cards:
-        - loop through the card array to select and swap index (fisher yates algorithm)
+    - Shuffle card function:
+        - loop through the memoryCard array to select and swap index (fisher yates algorithm) when game is initilized
 
-    - click handle:
-        - when card is clicked selected card's index is obtained, if not already selected or matched, value is revealed 
+    - click handle function:
+        - when user clicks on one card, the selected card's index is obtained from the memoryCard array, if the card has not already been selected or matched, the back image is replaced with the front image and locks in place.
+        - when user clicks second card, the selected card's index is obtained from the memoryCard array, if the card has not already been selected or matched, the back image is replaced with the front image and locks in place.
+        - no other card in memoryCard array should be clickable.
+       
 
-    - Check match:
+    - Check match function
         - When 2 cards are selected ; the values are compared.
-        - if values match, the pairs remain front facing
+        - if values match, the cards remain front facing
         - else the cards are flipped back facing 
 
-    - Win:
-        - once all pairs are matched, game is stopped
-        - winner message is displayed 
-        - timer is stopped (strech goal)
+    - Win function
+        - once all cards are front facing the game is stopped
+        - winner message is displayed using HTML id "winner"
+      
 
 
 
