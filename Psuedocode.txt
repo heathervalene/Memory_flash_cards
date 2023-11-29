@@ -31,9 +31,9 @@ JS Logic:
     - array of cards holding value to be used for flashcards and front card image
 
 - State variables
-    - board game starting 
-    - shuffle cards 
-    - matched pair
+    - board game starting (StartGame)
+    - shuffle cards (shuffleCards)
+    - matched pair 
    
 
 - Cached elements
@@ -57,6 +57,9 @@ JS Logic:
     -  initilize game state when player moves to game HTML page:
         - all cards facing back image 
         - cards are shuffled
+
+    -Render Board function  
+        - 
        
 
     - Shuffle card function:
