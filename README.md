@@ -28,7 +28,7 @@
 
 ### **_Getting Started_**
 
-#### Read through the instructions on the welcome page. When you are ready to start, simply click on the start button and you will begin the game.
+#### Read through the instructions on the welcome page. When you are ready to start, simply click on the Play button and you will begin the game.
 
 ***
 
@@ -54,4 +54,4 @@
 
 #### Images: 
 
-#### Code Support:
+#### Code Support: [w3schools](https://w3schools.com) | [Stack Overflow](https://stackoverflow.com) | [MDN Docs](https://https://developer.mozilla.org/en-US/) | 

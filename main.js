@@ -107,6 +107,7 @@ function flipCard(card) {
     }
 }
 
+
 function checkMatch() {
     const [index1, index2] = selectedCard;
     const card1 = memoryCards[index1];
