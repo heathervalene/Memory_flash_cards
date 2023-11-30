@@ -99,9 +99,11 @@ function flipCard(card) {
     if (card.style.backgroundImage.includes(backFace)) {
         let cardImage = memoryCards[card.dataset.index].img
         card.style.backgroundImage = `url(${cardImage})`;
+        card.classList.toggle('flipped');
 
     } else {
         card.style.backgroundImage = `url(${backFace})`;
+        card.classList.toggle('flipped');
     }
 }
 
@@ -122,8 +124,11 @@ function flipBack() {
     setTimeout(() => {
         selectedCard.forEach(cardIndex => {
             const card = allCards[cardIndex];
+            card.classList.toggle('flipped');
+            setTimeout(() => {
             card.style.backgroundImage = `url(${backFace})`;
-        });
+        }, 500);
+    });
         selectedCard = [];
         isBoardLocked = false;
     }, 1000);

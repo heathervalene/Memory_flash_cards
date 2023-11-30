@@ -52,6 +52,6 @@
 
 ### **_Credits_**
 
-#### Images:
+#### Images: 
 
 #### Code Support:

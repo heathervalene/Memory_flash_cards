@@ -89,7 +89,12 @@ h1 {
     border: 2px solid black;
     background-size: contain;
     cursor: pointer;
+    transition: transform 0.5s ease;
 } 
+
+.flipped {
+    transform: rotateY(180deg);
+}
 
 #backhome {
     position: fixed;
