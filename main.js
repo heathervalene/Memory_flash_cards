@@ -10,7 +10,7 @@ const memoryCards = [
     { id: 'vestat', value: 'Vestat', img: 'images/Vestat.png' },
     { id: 'freddy2', value: 'Freddy', img: 'images/freddy.png' },
     { id: 'ghost2', value: 'Ghost', img: 'images/ghost.png' },
-    { id: 'hannibal2', value: 'Hannible', img: 'images/hannibal.png' },
+    { id: 'hannibal2', value: 'Hannibal', img: 'images/hannibal.png' },
     { id: 'norman2', value: 'Norman', img: 'images/norman.png' },
     { id: 'patrick2', value: 'Patrick', img: 'images/patrick.png' },
     { id: 'vestat2', value: 'Vestat', img: 'images/Vestat.png' },
@@ -28,7 +28,6 @@ let selectedCard = [];
 
 const gameBoard = document.querySelector('.gameboard');
 const playButton = document.getElementById('play');
-const backhomeButton = document.getElementById('backhome');
 const paButton = document.getElementById('PA_button');
 const winnerMessage = document.getElementById('winner');
 const allCards = document.querySelectorAll('.memory_card');
@@ -110,7 +109,6 @@ function checkMatch() {
     const [index1, index2] = selectedCard;
     const card1 = memoryCards[index1];
     const card2 = memoryCards[index2];
-
     if (card1.value === card2.value) {
         selectedCard = [];
         isBoardLocked = false;
@@ -118,6 +116,7 @@ function checkMatch() {
         flipBack();
     }
 }
+
 
 function flipBack() {
     setTimeout(() => {
@@ -131,7 +130,7 @@ function flipBack() {
 }
 
 
-//function checkWin(){}
+
 
 function playAgain() {
     startGame();

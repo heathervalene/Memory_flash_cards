@@ -69,7 +69,6 @@ h1 {
 h2 {
     font-size: 4vmin;
     color: white;
-    display: none;
 }
 
 .gameboard {
@@ -112,6 +111,8 @@ h2 {
     right: 0;
     margin: 5vmin;
     font-size: 2vmin;
+    border-radius: 2vmin;
+    padding: 1vmin;
     cursor: pointer;
 }
 
