@@ -41,7 +41,7 @@ const allCards = document.querySelectorAll('.memory_card');
 
 paButton.addEventListener('click', playAgain);
 allCards.forEach((card) => {
-card.addEventListener('click', handleCardClick);
+    card.addEventListener('click', handleCardClick);
 }
 )
 
@@ -99,26 +99,45 @@ function handleCardClick(evt) {
 function flipCard(card) {
     if (card.style.backgroundImage.includes(backFace)) {
         let cardImage = memoryCards[card.dataset.index].img
-        card.style.backgroundImage = `url(${cardImage})`; 
+        card.style.backgroundImage = `url(${cardImage})`;
 
     } else {
         card.style.backgroundImage = `url(${backFace})`;
     }
 }
 
-//function checkMatch () {}
+function checkMatch() {
+    const [index1, index2] = selectedCard;
+    const card1 = memoryCards[index1];
+    const card2 = memoryCards[index2];
 
+    if (card1.value === card2.value) {
+        selectedCard = [];
+        isBoardLocked = false;
+    } else {
+        flipBack();
+    }
+}
 
-//function flipBack () {}
+function flipBack() {
+    setTimeout(() => {
+        selectedCard.forEach(cardIndex => {
+            const card = allCards[cardIndex];
+            card.style.backgroundImage = `url(${backFace})`;
+        });
+        selectedCard = [];
+        isBoardLocked = false;
+    }, 1000);
+}
 
 
 //function checkWin(){}
 
-function playAgain () {
+function playAgain() {
     startGame();
 }
 
-//function backHome () {}
+
 
 
 startGame();
