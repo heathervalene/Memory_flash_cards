@@ -44,11 +44,16 @@ p {
     bottom: 1vmin;
     font-size: 5vmin;
     margin: 10vmin;
+    background-color: white;
+    color: black;
+    padding: 1vmin;
+    text-decoration: none;
+    border-radius: 2vmin;
     cursor: pointer;
 }
 
-#play.hover {
-    background-color: rgb(5, 5, 5);
+#play:hover {
+    background-color: white;
 }
 
 
@@ -76,15 +81,16 @@ h2 {
     margin: 8vmin;
 }
 
-.memory_card {
+ .memory_card {
     width: 10vmin;
     height: 20vmin;
     margin: 1vmin;
     text-align: center;
     background-color: #f0f0f0;
     border: 2px solid black;
+    background-size: contain;
     cursor: pointer;
-}
+} 
 
 #backhome {
     position: fixed;
@@ -92,6 +98,11 @@ h2 {
     left: 0;
     margin: 5vmin;
     font-size: 2vmin;
+    background-color: white;
+    color: black;
+    padding: 1vmin;
+    text-decoration: none;
+    border-radius: 2vmin;
     cursor: pointer;
 }
 

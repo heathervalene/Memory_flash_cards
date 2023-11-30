@@ -31,36 +31,96 @@ const playButton = document.getElementById('play');
 const backhomeButton = document.getElementById('backhome');
 const paButton = document.getElementById('PA_button');
 const winnerMessage = document.getElementById('winner');
-const cardEl = document.querySelectorAll('.memory_card');
+const allCards = document.querySelectorAll('.memory_card');
+
+
+
 
 
 /*----- event listeners -----*/
 
-//playButton.addEventListener('click', startGame);
-//backhomeButton.addEventListener('click', playAgain);
-//paButton.addEventListener('click', playAgain);
-//gameBoard.addEventListener('click', handleCardClick);
+paButton.addEventListener('click', playAgain);
+allCards.forEach((card) => {
+card.addEventListener('click', handleCardClick);
+}
+)
 
 
 
 /*----- functions -----*/
 
-function startGame () {
+//need a start game button to initialize 
+function startGame() {
     isGameStarted = true;
     isBoardLocked = false;
     winnerMessage.innerHTML = '';
     selectedCard = [];
     shuffleCards();
-    renderBoard();
+    renderGame();
 }
 
 
-//used the Fisher-yates shuffle algorithm found on fullstack
-function shuffleCards (memoryCards) {
+
+//used the Fisher-yates shuffle algorithm found on stack overflow
+function shuffleCards() {
     for (let i = memoryCards.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [memoryCards[i], memoryCards[j]] = [memoryCards[j], memoryCards[i]];
     }
 }
+
+function renderGame() {
+    memoryCards.forEach((card, index) => {
+        const cardEl = document.getElementById(card.id);
+        if (cardEl) {
+            cardEl.style.backgroundImage = `url(${backFace})`
+        }
+    })
+}
+
+//dataset index I found on stack overflow
+function handleCardClick(evt) {
+    if (!isGameStarted || isBoardLocked) return;
+    const clickedCard = evt.target;
+    const cardIndex = parseInt(clickedCard.dataset.index);
+
+
+    if (selectedCard.length < 2 && !selectedCard.includes(cardIndex)) {
+        selectedCard.push(cardIndex);
+        flipCard(clickedCard);
+
+        if (selectedCard.length === 2) {
+            isBoardLocked = true;
+            setTimeout(checkMatch, 1000)
+        }
+    }
+}
+
+function flipCard(card) {
+    if (card.style.backgroundImage.includes(backFace)) {
+        let cardImage = memoryCards[card.dataset.index].img
+        card.style.backgroundImage = `url(${cardImage})`; 
+
+    } else {
+        card.style.backgroundImage = `url(${backFace})`;
+    }
+}
+
+//function checkMatch () {}
+
+
+//function flipBack () {}
+
+
+//function checkWin(){}
+
+function playAgain () {
+    startGame();
+}
+
+//function backHome () {}
+
+
+startGame();
 
 

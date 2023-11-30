@@ -58,8 +58,8 @@ JS Logic:
         - all cards facing back image 
         - cards are shuffled
 
-    -Render Board function  
-        - 
+    -Render Game function  
+        - have the cards all facing down 
        
 
     - Shuffle card function:
