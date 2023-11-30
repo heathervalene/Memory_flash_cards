@@ -61,13 +61,13 @@ p {
 /*Game Page*/
 
 h1 {
-    font-size: 12vmin;
+    font-size: 13vmin;
     margin: 1vmin;
     color: white;
 }
 
 #winner {
-    font-size: 4vmin;
+    font-size: 5vmin;
     color: white;
 }
 
@@ -81,13 +81,15 @@ h1 {
 }
 
  .memory_card {
-    width: 10vmin;
-    height: 20vmin;
-    margin: 1vmin;
+    width: 13vmin;
+    height: 15vmin;
+    margin: 0.5vmin;
     text-align: center;
     background-color: #f0f0f0;
     border: 2px solid black;
-    background-size: contain;
+    border-radius: 1vmin;
+    background-size: cover;
+    background-position: center center;
     cursor: pointer;
     transition: transform 0.5s ease;
 } 
