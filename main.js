@@ -112,11 +112,11 @@ function checkMatch() {
     if (card1.value === card2.value) {
         selectedCard = [];
         isBoardLocked = false;
+        checkWin();
     } else {
         flipBack();
     }
 }
-
 
 function flipBack() {
     setTimeout(() => {
@@ -129,14 +129,20 @@ function flipBack() {
     }, 1000);
 }
 
-
-
+//used chatGPT for the 'Array.from' method to help troubleshoot
+function checkWin() {
+    const allMatched = Array.from(allCards).every(card => { 
+        return !card.style.backgroundImage.includes(backFace);
+    });
+    if (allMatched) {
+        isGameStarted = false;
+        winnerMessage.innerHTML = 'Congratulations! You won!';
+    }
+}
 
 function playAgain() {
     startGame();
 }
-
-
 
 
 startGame();
