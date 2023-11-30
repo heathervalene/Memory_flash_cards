@@ -24,6 +24,7 @@ let isBoardLocked = false;
 let selectedCard = [];
 
 
+
 /*----- cached elements -----*/
 
 const gameBoard = document.querySelector('.gameboard');
@@ -76,6 +77,7 @@ function renderGame() {
         }
     })
 }
+
 
 //dataset index I found on stack overflow
 function handleCardClick(evt) {
@@ -135,8 +137,10 @@ function flipBack() {
     });
         selectedCard = [];
         isBoardLocked = false;
-    }, 1000);
+    }, 500);
 }
+
+
 
 //used chatGPT for the 'Array.from' method to help troubleshoot
 function checkWin() {

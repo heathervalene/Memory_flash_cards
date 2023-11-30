@@ -26,10 +26,28 @@ body {
     padding: 8vmin;
 }
 
-#title {
+/*used this code for the title transition https://codepen.io/alvarotrigo/pen/bGrXmwM*/
+
+.title {
     color: white;
-    font-size: 20vmin;
+    font-size: 13vmin;
+    position: relative;
 }
+
+.title span {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    animation: flip 4s;
+    animation-iteration-count: 3;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  } 
+
 
 p {
     font-size: 3.5vmin;
@@ -52,17 +70,17 @@ p {
     cursor: pointer;
 }
 
-#play:hover {
-    background-color: white;
-}
-
-
 
 /*Game Page*/
 
 h1 {
     font-size: 13vmin;
     margin: 1vmin;
+    color: white;
+}
+
+#timer {
+    font-size: 5vmin;
     color: white;
 }
 
@@ -77,12 +95,12 @@ h1 {
     align-items: center;
     flex-wrap: wrap;
     max-width: 80vmin;
-    margin: 8vmin;
+    margin: 6vmin;
 }
 
  .memory_card {
     width: 13vmin;
-    height: 15vmin;
+    height: 16vmin;
     margin: 0.5vmin;
     text-align: center;
     background-color: #f0f0f0;
