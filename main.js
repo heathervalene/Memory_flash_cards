@@ -58,8 +58,6 @@ function startGame() {
     isBoardLocked = false;
     winnerMessage.innerHTML = '';
     selectedCard = [];
-    seconds = 0;
-    minutes = 0;
     paButton.style.display = 'none';
     shuffleCards();
     renderGame();
@@ -85,6 +83,7 @@ function renderGame() {
 }
 
 function timeGenerator() {
+
     seconds += 1;
     if (seconds >= 60) {
         minutes += 1;
@@ -98,7 +97,12 @@ function timeGenerator() {
 
 //dataset index I found on stack overflow
 function handleCardClick(evt) {
+    console.log(isGameStarted);
     if (!isGameStarted) {
+        seconds = 0;
+        minutes = 0;
+        timeValue.style.display = "block";
+        timeGenerator()
         interval = setInterval(timeGenerator, 1000);
         isGameStarted = true;
     }

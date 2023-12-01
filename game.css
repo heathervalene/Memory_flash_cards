@@ -11,7 +11,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 1) url(https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg);
+    background: rgba(255, 255, 255, 1) url(https://media.moddb.com/cache/images/mods/1/51/50713/thumb_620x2000/creepy_forest.1.png);
+    background-size: cover;
 
 }
 
@@ -127,15 +128,9 @@ span:nth-child(6) {
     right: 0;
     margin: 5vmin;
     font-size: 2vmin;
+    border-color: white;
     border-radius: 2vmin;
     padding: 1vmin;
     cursor: pointer;
 }
 
-#backhome.hover {
-    background-color: rgb(5, 5, 5);
-}
-
-#PA_button.hover {
-    background-color: rgb(5, 5, 5);
-}

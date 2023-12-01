@@ -3,6 +3,8 @@
     font-family: 'Julius Sans One', sans-serif;
 }
 
+
+
 body {
     height: 100vh;
     margin: 0;
@@ -11,7 +13,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 1) url(https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg);
+    background: rgba(255, 255, 255, 1) url(https://media.moddb.com/cache/images/mods/1/51/50713/thumb_620x2000/creepy_forest.1.png);
+    background-size: cover;
 
 }
 
