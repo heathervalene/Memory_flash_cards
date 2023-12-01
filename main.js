@@ -92,7 +92,7 @@ function timeGenerator () {
     }
     let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
     let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
-    timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
+    timeValue.innerHTML = `<div>Time:</div>${minutesValue}:${secondsValue}`;
 };
 
 
@@ -177,13 +177,12 @@ function checkWin() {
         let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
         let formattedTime = `${minutesValue}:${secondsValue}`;
         timeValue.style.display = 'none';
-        winnerMessage.innerHTML = `Congratulations! It took you ${formattedTime}. Try again for faster time!`;
+        winnerMessage.innerHTML = `Congratulations! It took you ${formattedTime}. Try again for a faster time!`;
         paButton.style.display = 'block';
     }
 }
 
 function playAgain() {
-    clearInterval(interval);
     startGame();
     
 }
