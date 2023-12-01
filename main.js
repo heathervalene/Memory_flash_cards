@@ -55,13 +55,12 @@ allCards.forEach((card) => {
 
 //need a start game button to initialize 
 function startGame() {
-    isGameStarted = true;
     isBoardLocked = false;
     winnerMessage.innerHTML = '';
     selectedCard = [];
     seconds = 0;
     minutes = 0;
-    interval = setInterval(timeGenerator, 1000);
+    paButton.style.display = 'none';
     shuffleCards();
     renderGame();
 }
@@ -99,6 +98,10 @@ function timeGenerator () {
 
 //dataset index I found on stack overflow
 function handleCardClick(evt) {
+    if(!isGameStarted) {
+        interval = setInterval(timeGenerator, 1000);
+        isGameStarted = true;
+    }
     if (!isGameStarted || isBoardLocked) return;
     const clickedCard = evt.target;
     const cardIndex = parseInt(clickedCard.dataset.index);
@@ -169,12 +172,20 @@ function checkWin() {
     if (allMatched) {
         isGameStarted = false;
         clearInterval(interval);
-        winnerMessage.innerHTML = 'Congratulations! You won!';
+        
+        let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+        let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
+        let formattedTime = `${minutesValue}:${secondsValue}`;
+        timeValue.style.display = 'none';
+        winnerMessage.innerHTML = `Congratulations! It took you ${formattedTime}. Try again for faster time!`;
+        paButton.style.display = 'block';
     }
 }
 
 function playAgain() {
+    clearInterval(interval);
     startGame();
+    
 }
 
 
