@@ -97,7 +97,6 @@ function timeGenerator() {
 
 //dataset index I found on stack overflow
 function handleCardClick(evt) {
-    console.log(isGameStarted);
     if (!isGameStarted) {
         seconds = 0;
         minutes = 0;
@@ -184,7 +183,7 @@ function checkWin() {
         let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
         let formattedTime = `${minutesValue}:${secondsValue}`;
         timeValue.style.display = 'none';
-        winnerMessage.innerHTML = `Congratulations! It took you ${formattedTime}. Try again for a faster time!`;
+        winnerMessage.innerHTML = `Congratulations! Your time is ${formattedTime}. Try again for a faster time!`;
         paButton.style.display = 'block';
     }
 }
