@@ -1,3 +1,6 @@
+
+
+
 /*----- constants -----*/
 
 const memoryCards = [
@@ -29,6 +32,18 @@ const imageSlider = document.getElementById("slider");
 
 /*----- functions -----*/
 
+// used a mix of stack overflow, ChatGPT and w3schools to build and troubleshoot this code//
+
+function startSlide() {
+    memoryCards.forEach((imageUrl) => {
+      const imageElement = document.createElement('img');
+      imageElement.src = imageUrl;
+      imageElement.classList.add('image');
+      imageSlider.appendChild(imageElement);
+    });
+
+showImage(currentIndex);
+
 function showImage(index) {
     imageSlider.style.transform = `translateX(${-index * 100}%)`;
   }
@@ -45,20 +60,9 @@ function showImage(index) {
     showImage(currentIndex);
   }
 
-  function init() {
-    memoryCards.forEach((imageUrl) => {
-      const imageElement = document.createElement('img');
-      imageElement.src = imageUrl;
-      imageElement.classList.add('image');
-      imageSlider.appendChild(imageElement);
-    });
-  
 
-    showImage(currentIndex);
-  
-
-    setInterval(nextImage, 3000);
+    setInterval(nextImage, 2000);
   }
   
 
-  window.onload = init;
+  window.onload = startSlide;
