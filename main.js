@@ -84,9 +84,9 @@ function renderGame() {
     })
 }
 
-function timeGenerator () {
+function timeGenerator() {
     seconds += 1;
-    if(seconds >= 60) {
+    if (seconds >= 60) {
         minutes += 1;
         seconds = 0;
     }
@@ -98,7 +98,7 @@ function timeGenerator () {
 
 //dataset index I found on stack overflow
 function handleCardClick(evt) {
-    if(!isGameStarted) {
+    if (!isGameStarted) {
         interval = setInterval(timeGenerator, 1000);
         isGameStarted = true;
     }
@@ -106,7 +106,10 @@ function handleCardClick(evt) {
     const clickedCard = evt.target;
     const cardIndex = parseInt(clickedCard.dataset.index);
 
-
+    const isAlreadyMatched = !clickedCard.style.backgroundImage.includes(backFace);
+    if (isAlreadyMatched) {
+        return;
+    }
     if (selectedCard.length < 2 && !selectedCard.includes(cardIndex)) {
         selectedCard.push(cardIndex);
         flipCard(clickedCard);
@@ -122,8 +125,8 @@ function flipCard(card) {
     if (card.style.backgroundImage.includes(backFace)) {
         let cardImage = memoryCards[card.dataset.index].img
 
-        setTimeout (() => {
-        card.style.backgroundImage = `url(${cardImage})`;
+        setTimeout(() => {
+            card.style.backgroundImage = `url(${cardImage})`;
         }, 100);
         card.classList.toggle('flipped');
 
@@ -154,9 +157,9 @@ function flipBack() {
             const card = allCards[cardIndex];
             card.classList.toggle('flipped');
             setTimeout(() => {
-            card.style.backgroundImage = `url(${backFace})`;
-        }, 100);
-    });
+                card.style.backgroundImage = `url(${backFace})`;
+            }, 100);
+        });
         selectedCard = [];
         isBoardLocked = false;
     }, 500);
@@ -166,13 +169,13 @@ function flipBack() {
 
 //used chatGPT for the 'Array.from' method to help troubleshoot
 function checkWin() {
-    const allMatched = Array.from(allCards).every(card => { 
+    const allMatched = Array.from(allCards).every(card => {
         return !card.style.backgroundImage.includes(backFace);
     });
     if (allMatched) {
         isGameStarted = false;
         clearInterval(interval);
-        
+
         let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
         let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
         let formattedTime = `${minutesValue}:${secondsValue}`;
@@ -184,7 +187,6 @@ function checkWin() {
 
 function playAgain() {
     startGame();
-    
 }
 
 
