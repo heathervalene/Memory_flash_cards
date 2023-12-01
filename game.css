@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 1) url(https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg);
+
+}
+
+
+h1 {
+     font-size: 13vmin;
+    color: white;
+}
+
+#time {
+    font-size: 5vmin;
+    color: white;
+}
+
+#winner {
+    font-size: 5vmin;
+    color: white;
+}
+
+.gameboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 65vmin;
+}
+
+ .memory_card {
+    width: 13vmin;
+    height: 16vmin;
+    margin: 0.1vmin;
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 2px solid black;
+    border-radius: 1vmin;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+} 
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+#backhome {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 5vmin;
+    font-size: 2vmin;
+    background-color: white;
+    color: black;
+    padding: 1vmin;
+    text-decoration: none;
+    border-radius: 2vmin;
+    cursor: pointer;
+}
+
+#PA_button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 5vmin;
+    font-size: 2vmin;
+    border-radius: 2vmin;
+    padding: 1vmin;
+    cursor: pointer;
+}
+
+#backhome.hover {
+    background-color: rgb(5, 5, 5);
+}
+
+#PA_button.hover {
+    background-color: rgb(5, 5, 5);
+}

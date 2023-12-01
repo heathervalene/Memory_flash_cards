@@ -22,6 +22,9 @@ const memoryCards = [
 let isGameStarted = false;
 let isBoardLocked = false;
 let selectedCard = [];
+let interval;
+let seconds = 0;
+let minutes = 0;
 
 
 
@@ -32,6 +35,7 @@ const playButton = document.getElementById('play');
 const paButton = document.getElementById('PA_button');
 const winnerMessage = document.getElementById('winner');
 const allCards = document.querySelectorAll('.memory_card');
+const timeValue = document.getElementById('time');
 
 
 
@@ -55,6 +59,9 @@ function startGame() {
     isBoardLocked = false;
     winnerMessage.innerHTML = '';
     selectedCard = [];
+    seconds = 0;
+    minutes = 0;
+    interval = setInterval(timeGenerator, 1000);
     shuffleCards();
     renderGame();
 }
@@ -77,6 +84,17 @@ function renderGame() {
         }
     })
 }
+
+function timeGenerator () {
+    seconds += 1;
+    if(seconds >= 60) {
+        minutes += 1;
+        seconds = 0;
+    }
+    let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+    let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
+    timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
+};
 
 
 //dataset index I found on stack overflow
@@ -126,6 +144,7 @@ function checkMatch() {
     }
 }
 
+
 function flipBack() {
     setTimeout(() => {
         selectedCard.forEach(cardIndex => {
@@ -149,6 +168,7 @@ function checkWin() {
     });
     if (allMatched) {
         isGameStarted = false;
+        clearInterval(interval);
         winnerMessage.innerHTML = 'Congratulations! You won!';
     }
 }
