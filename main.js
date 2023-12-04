@@ -38,6 +38,8 @@ const winnerMessage = document.getElementById('winner');
 const allCards = document.querySelectorAll('.memory_card');
 const timeValue = document.getElementById('time');
 const flipSound = document.getElementById('flipSound');
+const winSound = document.getElementById('winSound');
+const timerSound = document.getElementById('timeClock');
 
 
 /*----- event listeners -----*/
@@ -102,6 +104,7 @@ function handleCardClick(evt) {
         timeGenerator()
         interval = setInterval(timeGenerator, 1000);
         isGameStarted = true;
+        timerSound.play();
     }
     if (!isGameStarted || isBoardLocked) return;
     const clickedCard = evt.target;
@@ -186,8 +189,10 @@ function checkWin() {
         let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
         let formattedTime = `${minutesValue}:${secondsValue}`;
         timeValue.style.display = 'none';
-        winnerMessage.innerHTML = `Congratulations! Your time is ${formattedTime}. Try again for a faster time!`;
+        winnerMessage.innerHTML = `You finished in ${formattedTime}. Try again for a faster time!`;
         paButton.style.display = 'block';
+        timerSound.pause();
+        winSound.play();
     }
 }
 

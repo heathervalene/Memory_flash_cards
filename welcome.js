@@ -49,7 +49,7 @@ function startSlide() {
         imageElement.classList.add('image');
         imageSlider.appendChild(imageElement);
     });
-    setInterval(nextImage, 2000);
+    setInterval(nextImage, 1500);
 }
 
 
