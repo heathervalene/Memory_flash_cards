@@ -21,48 +21,52 @@ const memoryCards = [
 /*----- state variables -----*/
 
 let currentIndex = 0;
-
+ 
 
 
 /*----- cached elements -----*/
 
 const imageSlider = document.getElementById("slider");
+const audio = document.getElementById("music");
 
+/*----- event listeners -----*/
+
+document.addEventListener("DOMContentLoaded", music);
 
 
 /*----- functions -----*/
+
+function music() {
+ audio.play();
+}
 
 // used a mix of stack overflow, ChatGPT and w3schools to build and troubleshoot this code//
 
 function startSlide() {
     memoryCards.forEach((imageUrl) => {
-      const imageElement = document.createElement('img');
-      imageElement.src = imageUrl;
-      imageElement.classList.add('image');
-      imageSlider.appendChild(imageElement);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+        imageElement.classList.add('image');
+        imageSlider.appendChild(imageElement);
     });
-
-showImage(currentIndex);
-
-function showImage(index) {
-    imageSlider.style.transform = `translateX(${-index * 100}%)`;
-  }
-  
-
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % memoryCards.length;
-    showImage(currentIndex);
-  }
-  
- 
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  }
-
-
     setInterval(nextImage, 2000);
-  }
-  
+}
 
-  window.onload = startSlide;
+
+    function showImage(index) {
+        imageSlider.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % memoryCards.length;
+        showImage(currentIndex);
+    }
+
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+
+startSlide();

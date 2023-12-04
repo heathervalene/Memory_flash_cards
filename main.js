@@ -53,7 +53,7 @@ allCards.forEach((card) => {
 
 /*----- functions -----*/
 
-//need a start game button to initialize 
+
 function startGame() {
     isBoardLocked = false;
     winnerMessage.innerHTML = '';
@@ -83,7 +83,6 @@ function renderGame() {
 }
 
 function timeGenerator() {
-
     seconds += 1;
     if (seconds >= 60) {
         minutes += 1;

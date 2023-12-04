@@ -55,3 +55,7 @@
 #### Images: 
 
 #### Code Support: [w3schools](https://w3schools.com) | [Stack Overflow](https://stackoverflow.com) | [MDN Docs](https://https://developer.mozilla.org/en-US/) | 
+
+#### Audio files: [Demented Nightmare by Darren Curtis](https://www.darrencurtismusic.com/) | Music promoted by https://www.chosic.com/free-music/all/
+
+ 
