@@ -42,17 +42,15 @@
 
 #### Game Image
 
-### Place holder for now
+![game](/images/game_image.png)
 
-***
 
-### **_Future Updates_**
 
 ***
 
 ### **_Credits_**
 
-#### Images: 
+#### Images: [Google Images](https://google.com)
 
 #### Code Support: [w3schools](https://w3schools.com) | [Stack Overflow](https://stackoverflow.com) | [MDN Docs](https://https://developer.mozilla.org/en-US/) | 
 

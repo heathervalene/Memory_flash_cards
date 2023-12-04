@@ -1,5 +1,6 @@
 /*----- constants -----*/
 
+
 const backFace = 'images/back.png';
 const memoryCards = [
     { id: 'freddy', value: 'Freddy', img: 'images/freddy.png' },
@@ -36,9 +37,7 @@ const paButton = document.getElementById('PA_button');
 const winnerMessage = document.getElementById('winner');
 const allCards = document.querySelectorAll('.memory_card');
 const timeValue = document.getElementById('time');
-
-
-
+const flipSound = document.getElementById('flipSound');
 
 
 /*----- event listeners -----*/
@@ -46,8 +45,8 @@ const timeValue = document.getElementById('time');
 paButton.addEventListener('click', playAgain);
 allCards.forEach((card) => {
     card.addEventListener('click', handleCardClick);
-}
-)
+})
+
 
 
 
@@ -138,6 +137,11 @@ function flipCard(card) {
     }
 }
 
+function playFlipSound () {
+    flipSound.volume = 0.5;
+    flipSound.play();
+}
+
 
 function checkMatch() {
     const [index1, index2] = selectedCard;
@@ -146,6 +150,7 @@ function checkMatch() {
     if (card1.value === card2.value) {
         selectedCard = [];
         isBoardLocked = false;
+        playFlipSound();
         checkWin();
     } else {
         flipBack();
@@ -166,7 +171,6 @@ function flipBack() {
         isBoardLocked = false;
     }, 500);
 }
-
 
 
 //used chatGPT for the 'Array.from' method to help troubleshoot
