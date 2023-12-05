@@ -21,7 +21,7 @@ const memoryCards = [
 /*----- state variables -----*/
 
 let currentIndex = 0;
- 
+
 
 
 /*----- cached elements -----*/
@@ -37,7 +37,7 @@ document.addEventListener("mouseover", music);
 /*----- functions -----*/
 
 function music() {
- audio.play();
+    audio.play();
 }
 
 // used a mix of stack overflow, ChatGPT and w3schools to build and troubleshoot this code//
@@ -53,20 +53,20 @@ function startSlide() {
 }
 
 
-    function showImage(index) {
-        imageSlider.style.transform = `translateX(${-index * 100}%)`;
-    }
+function showImage(index) {
+    imageSlider.style.transform = `translateX(${-index * 100}%)`;
+}
 
 
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % memoryCards.length;
-        showImage(currentIndex);
-    }
+function nextImage() {
+    currentIndex = (currentIndex + 1) % memoryCards.length;
+    showImage(currentIndex);
+}
 
 
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-    }
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+}
 
 startSlide();

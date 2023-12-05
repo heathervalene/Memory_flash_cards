@@ -140,7 +140,7 @@ function flipCard(card) {
     }
 }
 
-function playFlipSound () {
+function playFlipSound() {
     flipSound.volume = 0.5;
     flipSound.play();
 }
