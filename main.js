@@ -191,6 +191,7 @@ function checkWin() {
         timeValue.style.display = 'none';
         winnerMessage.innerHTML = `You finished in ${formattedTime}. Try again for a faster time!`;
         paButton.style.display = 'block';
+        flipSound.pause();
         timerSound.pause();
         winSound.play();
     }

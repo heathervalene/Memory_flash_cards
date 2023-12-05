@@ -31,7 +31,7 @@ const audio = document.getElementById("music");
 
 /*----- event listeners -----*/
 
-document.addEventListener("DOMContentLoaded", music);
+document.addEventListener("mouseover", music);
 
 
 /*----- functions -----*/
