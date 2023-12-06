@@ -48,6 +48,15 @@
 
 ***
 
+#### **_Future Updates_**
+
+- Add additional themes to pick from 
+- leaderboard to show highest scores
+
+
+
+***
+
 ### **_Credits_**
 
 #### Images: [Google Images](https://google.com)
