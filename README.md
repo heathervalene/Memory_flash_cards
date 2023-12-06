@@ -32,6 +32,8 @@
 
 #### Read through the instructions on the welcome page. When you are ready to start, simply click on the Play button and you will begin the game.
 
+![Memory Game URL](https://horror_memory_game.surge.sh/)
+
 ***
 
 ### **_ScreenShots_**
