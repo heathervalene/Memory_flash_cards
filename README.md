@@ -12,6 +12,8 @@
 
 #### This project is a simple browser based game of Memory flashcards were the user tries to match 2 cards of the same image. This is built as a first project to help further my knowledge on programming. 
 
+[Memory Card Game](https://github.com/heathervalene/Memory_flash_cards)
+
 ***
 
 ### **_Technologies Used_**
